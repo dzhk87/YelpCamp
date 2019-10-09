@@ -1,0 +1,25 @@
+<% include ../partials/header %>
+
+<div class="container">
+	<div class="row">
+		<h1 style="text-align:center">Post A New Comment For <%= campground.name %></h1>
+		<div style="width:30%; margin:30px auto">
+			<form action="/campgrounds/<%= campground._id %>/comments" method="POST">
+				<!-- <div class="form-group">
+					<input class="form-control" type="text" name="comment[author]" placeholder="Author">
+				</div> -->
+				<div class="form-group">
+					<textarea class="form-control" name="comment[text]" placeholder="Comment" rows="3" style="resize:none;"></textarea>
+					<!-- <input class="form-control" type="text" name="desc" placeholder="Description"> -->
+				</div>
+				<div class="form-group">
+					<button class="btn btn-lg btn-default btn-block btn-primary">Submit</button>
+				</div>
+			</form>
+			<a href='javascript:history.back()'>Go Back</a>
+		</div>
+	</div>
+	
+</div>
+
+<% include ../partials/footer %>

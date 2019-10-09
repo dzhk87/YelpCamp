@@ -1,0 +1,23 @@
+<% include partials/header %>
+
+<div class="container">
+	<h2><%= campground.name %></h2>
+	<div class="row">
+		<img class="col-md-4 col-sm-6 col-xs-12" src="<%= campground.image %>">
+		<p class="col-md-8 col-sm-6"><%= campground.description %></p>
+	</div>
+	<!-- Comments section -->
+	<div class="container">
+		<% campground.comments.forEach(function(comment) { %>
+			<div class="row">
+				<p class="col-md-3 col-xs-12"><%= comment.author %></p>
+				<p class="col-md-9 "><%= comment.text %></p>
+			</div>
+		<% }); %>
+	</div>
+	<p class="text-right">
+		<a href="/campgrounds">View all campgrounds</a>
+	</p>
+</div>
+
+<% include partials/footer %>
